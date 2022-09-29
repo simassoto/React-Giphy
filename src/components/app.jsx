@@ -17,19 +17,22 @@ class App extends Component {
       gifs:[],
       selectedGifId: "9nZKqcn4phkT30zeN8"
     }
-
-    this.search("mogli");
-
-  }
+}
 
   search = (query) => {
-    giphy('zR7Q0Z7R4gDboAXP7CKJCr82JbARqRKu').search({
+    giphy('j3u1Ep1tQwHZGb8c4MQQ8AwxsLk957rU').search({
       q: query,
       rating: 'g'
   },  (error, result) => {
      this.setState({gifs: result.data
     });
   });
+  }
+
+  selectGif(id) {
+    this.setState({
+      selectedGifId: id
+    });
   }
 
 
